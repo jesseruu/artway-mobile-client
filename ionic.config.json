@@ -1,0 +1,7 @@
+{
+  "name": "Artway",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
