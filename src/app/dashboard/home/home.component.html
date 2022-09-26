@@ -1,12 +1,16 @@
-<ion-header collapse="fade">
+<ion-header class="ion-no-border" collapse="fade">
   <ion-toolbar>
-    <ion-title>Galeria | {{name}}</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+    <ion-title>Mi galeria | {{name}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="button">NUEVO</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
+<div class="image__container" *ngFor="let image of images">
+  <ion-title size="small">image.name</ion-title>
+  <ion-img [src]="image.src"></ion-img>
+</div>
 <ion-content>
-  
+ 
 </ion-content>

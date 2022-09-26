@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { HomeComponent } from './home.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    IonicModule
+    IonicModule,
+    FormsModule
   ],
   exports: [HomeComponent]
 })

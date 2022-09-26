@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -49,14 +48,16 @@ export class LoginComponent implements OnInit {
     }
   }
 
+
+
   async signin() {
     const load = await this.showLoading();
     try {
       this.authService.signin(this.email, this.password).subscribe(data => {
-        load.dismiss();
         localStorage.setItem('token', data.token);
         this.router.navigate(['dashboard']);
       });
+      load.dismiss();
     } catch (error) {
       load.dismiss();
       console.log(error);
