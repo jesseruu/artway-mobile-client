@@ -5,9 +5,12 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 
 import { IonicModule } from '@ionic/angular';
 import { DashboardComponent } from './dashboard.component';
+import { HomeComponent } from './home/home.component';
+import { DiscoverComponent } from './discover/discover.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent, HomeComponent, DiscoverComponent, SettingsComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

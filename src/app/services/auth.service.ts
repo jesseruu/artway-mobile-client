@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -8,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   signin(email: string, password: string){
     const userBody = {
@@ -29,6 +30,19 @@ export class AuthService {
 
     const url = `${environment.url}/auth/signup`;
     return this.http.post<any>(url, userBody);
+  }
 
+  isAuthenticated(): boolean{
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      return true;
+    }
+    return false;
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['auth']);
   }
 }

@@ -8,20 +8,40 @@ import jwt_decode from 'jwt-decode';
 })
 export class HomeComponent implements OnInit {
 
+  images = [
+    {
+      name: 'Maniacarta',
+      src: 'assets/test1.jpg'
+    }, {
+      name: 'Vadan',
+      src: 'assets/test2.jpg'
+    }, {
+      name: 'Suraji',
+      src: 'assets/test3.jpg'
+    }
+  ];
+
   name: string;
+  showContainer = true;
   constructor() { }
 
   ngOnInit() {
+
     const data: any = this.getUserdata(localStorage.getItem('token'));
     this.name = data.name;
+    console.log(data);
   }
 
-  getUserdata(token: string){
+  getUserdata(token: string) {
     try {
       return jwt_decode(token);
     } catch (error) {
       return null;
     }
+  }
+
+  changeThing() {
+    this.showContainer = true;
   }
 
 }

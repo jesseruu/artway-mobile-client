@@ -23,6 +23,12 @@
     grid-gap: 22px;
 }
 
+.error__container {
+    text-align: center;
+    font-family: SFRegular;
+    text-transform: uppercase;
+}
+
 .signup__buttons {
     margin: 26px 0;
     display: grid;
@@ -47,7 +53,7 @@
 
 .signup__footer {
     font-family: SFRegular;
-    margin: 56px;
+    margin: 32px 56px;
     text-align: center;
     text-transform: uppercase;
 }
@@ -58,18 +64,24 @@
     cursor: pointer;
 }
 .input{
+    padding-left: 12px !important;
     display: flex;
     height: 54px;
     width: auto;
     background: #FFFFFF;
-    border: 2.5px solid #000000;
+    border: 1.6px solid #333333;
     border-radius: 6px;
-    padding-left: 16px;
     font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 18px;
+    line-height: 24px;
     text-align: left;
+    font-weight: normal;
+    letter-spacing: 0.2px;
+}
+
+.input:hover {
+    border: 2.6px solid black;
+    transition: 0.2s
 }
 
 .button {

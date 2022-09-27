@@ -3,7 +3,7 @@
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-button class="back__button" (click)="goBack()">
-          <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+          <ion-icon slot="icon-only" name="chevron-back-outline" color="dark"></ion-icon>
         </ion-button>
       </ion-buttons>
     </ion-toolbar>
@@ -12,7 +12,7 @@
     <h1 class="signup__title">Crear una cuenta</h1>
     <div class="signup__content">
       <ion-input class="input" placeholder="Nombre" (ionChange)="getName($event); checkInputs()" required></ion-input>
-      <ion-input class="input" placeholder="Correo Electronico" type="email" (ionChange)="getEmail($event); checkInputs()" required></ion-input>
+      <ion-input class="input" placeholder="Correo electrónico" type="email" (ionChange)="getEmail($event); checkInputs()" required></ion-input>
       <ion-input class="input" placeholder="Contraseña" type="password" (ionChange)="getPassword($event); checkInputs()" required></ion-input>
     </div>
     <div class="signup__buttons">
@@ -21,6 +21,11 @@
       <ion-button class="button__external">Crear cuenta con Google 
         <ion-icon slot="start" src="assets/icon/Vector.svg"></ion-icon>
       </ion-button>
+    </div>
+    <div class="error__container">
+      <span *ngIf="isError === true">
+        <ion-label style="color: red;">Error al crear cuenta</ion-label>
+      </span>
     </div>
     <div class="signup__footer">
       <p>Al continuar aceptas los terminos y condiciones.</p>
