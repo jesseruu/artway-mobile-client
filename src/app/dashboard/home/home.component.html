@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border" collapse="fade">
+<ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-title>Mi galeria | {{name}}</ion-title>
     <ion-buttons slot="end">
@@ -7,10 +7,16 @@
   </ion-toolbar>
 </ion-header>
 
-<div class="image__container" *ngFor="let image of images">
-  <ion-title size="small">image.name</ion-title>
-  <ion-img [src]="image.src"></ion-img>
-</div>
 <ion-content>
- 
+  <div *ngIf="showContainer">
+    <div class="image__container" *ngFor="let image of images">
+      <ion-title size="small">{{image.name}}</ion-title>
+      <ion-img [src]="image.src"></ion-img>
+    </div>
+  </div>
+
+  <div class="empty__container" *ngIf="!showContainer">
+    <ion-img src="assets/empty.svg"></ion-img>
+    <p>¡Oops parece que aun no tienes nada en tu galeria!</p>
+  </div>
 </ion-content>

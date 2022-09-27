@@ -1,3 +1,18 @@
+.empty__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image__container {
+    margin: 26px 0;
+}
+
+.image__container ion-title {
+    padding: 0 12px;
+    font-size: 20px;
+}
+
 .button {
     font-family: SFBold;
     box-sizing: border-box;
@@ -29,8 +44,9 @@ ion-title {
 }
 
 ion-toolbar {
-    padding: 13px 18px;
+    padding: 0px 18px;
 }
+
 ion-content {
     font-family: Roboto;
     padding: 0 16px;

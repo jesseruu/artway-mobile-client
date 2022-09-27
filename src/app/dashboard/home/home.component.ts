@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   ];
 
   name: string;
-  showContainer = false
+  showContainer = false;
   constructor() { }
 
   ngOnInit() {
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
     this.name = data.name;
   }
 
-  getUserdata(token: string){
+  getUserdata(token: string) {
     try {
       return jwt_decode(token);
     } catch (error) {
