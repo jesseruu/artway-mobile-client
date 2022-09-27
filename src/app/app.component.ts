@@ -8,12 +8,9 @@ import { StatusBar, Style } from '@capacitor/status-bar';
 })
 export class AppComponent implements OnInit{
   constructor() {
-    
   }
 
   async ngOnInit() {
-    StatusBar.setOverlaysWebView({ overlay: true });
     await StatusBar.setStyle({ style: Style.Light });
   }
-
 }
