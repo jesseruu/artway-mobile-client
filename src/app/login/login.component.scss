@@ -15,7 +15,13 @@
     color: #000000;
     margin-bottom: 26px;
     margin-top: 56px;
-  }
+}
+
+.error__container {
+    text-align: center;
+    font-family: SFRegular;
+    text-transform: uppercase;
+}
   
 .login__content {
     display: grid;
@@ -47,7 +53,7 @@
 
 .login__footer {
     font-family: SFRegular;
-    margin: 56px;
+    margin: 32px 56px;
     text-align: center;
     text-transform: uppercase;
 }

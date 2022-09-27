@@ -23,6 +23,12 @@
     grid-gap: 22px;
 }
 
+.error__container {
+    text-align: center;
+    font-family: SFRegular;
+    text-transform: uppercase;
+}
+
 .signup__buttons {
     margin: 26px 0;
     display: grid;
@@ -47,7 +53,7 @@
 
 .signup__footer {
     font-family: SFRegular;
-    margin: 56px;
+    margin: 32px 56px;
     text-align: center;
     text-transform: uppercase;
 }

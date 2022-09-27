@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
 
   isButtonDisabled = true;
+  isError = false;
   name: string;
   email: string;
   password: string;
@@ -51,6 +52,7 @@ export class SignupComponent implements OnInit {
   }
 
   checkInputs() {
+    this.isError = false;
     if(this.name && this.email && this.password) {
       this.isButtonDisabled = false;
     } else {
@@ -61,15 +63,22 @@ export class SignupComponent implements OnInit {
   async signup() {
     const load = await this.showLoading();
     try {
-      this.authService.signup(this.name, this.email, this.password).subscribe(data => {
-        load.dismiss();
-        this.router.navigate(['auth']);
-        console.log(data);
-      });
+      this.authService.signup(this.name, this.email, this.password).subscribe(
+        data => {
+          this.router.navigate(['auth']);
+          load.dismiss();
+        },
+        err => {
+          this.isError = true;
+          console.log(err);
+          load.dismiss();
+        }, 
+        () => {
+          load.dismiss();
+        });
     } catch (error) {
       load.dismiss();
       console.log(error);
     }
   }
-
 }

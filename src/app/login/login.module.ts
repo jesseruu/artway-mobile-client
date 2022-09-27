@@ -5,9 +5,10 @@ import { IonicModule } from '@ionic/angular';
 
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, SignupComponent],
   imports: [
     CommonModule,
     LoginRoutingModule,

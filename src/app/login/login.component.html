@@ -12,6 +12,11 @@
         <ion-icon slot="start" src="assets/icon/Vector.svg"></ion-icon>
       </ion-button>
     </div>
+    <div class="error__container">
+      <span *ngIf="isError === true">
+        <ion-label style="color: red;">Correo o contraseña no valida</ion-label>
+      </span>
+    </div>
     <div class="login__footer">
       <p>¿Aun no tienes una cuenta?</p>
       <a routerLink="/auth/signup">crear cuenta</a>

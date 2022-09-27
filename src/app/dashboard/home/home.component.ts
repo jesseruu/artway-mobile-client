@@ -22,13 +22,14 @@ export class HomeComponent implements OnInit {
   ];
 
   name: string;
-  showContainer = false;
+  showContainer = true;
   constructor() { }
 
   ngOnInit() {
 
     const data: any = this.getUserdata(localStorage.getItem('token'));
     this.name = data.name;
+    console.log(data);
   }
 
   getUserdata(token: string) {

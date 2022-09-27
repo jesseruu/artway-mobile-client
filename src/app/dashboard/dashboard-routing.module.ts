@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
+import { DiscoverComponent } from './discover/discover.component';
+import { DonationComponent } from './donation/donation.component';
 import { HomeComponent } from './home/home.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   {
@@ -14,11 +17,11 @@ const routes: Routes = [
       },
       {
         path: 'discover',
-        loadChildren: () => import('./discover/discover.module').then(m => m.DiscoverModule)
+        component: DiscoverComponent
       },
       {
         path: 'settings',
-        loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)
+        component: SettingsComponent
       },
       {
         path: '',
@@ -26,6 +29,10 @@ const routes: Routes = [
         pathMatch: 'full'
       }
     ]
+  },
+  {
+    path: 'donation',
+    component: DonationComponent
   }
 ];
 
