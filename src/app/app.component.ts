@@ -1,19 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { StatusBar, Style } from '@capacitor/status-bar';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   constructor() {
-    
   }
-
-  async ngOnInit() {
-    StatusBar.setOverlaysWebView({ overlay: true });
-    await StatusBar.setStyle({ style: Style.Light });
-  }
-
 }
