@@ -1,9 +1,9 @@
-.settings__container {
+.user__container {
     font-family: Roboto;
     padding: 0 16px;
 }
 
-.settings__title {
+.user__title {
     font-family: SFRegular;
     font-style: normal;
     font-weight: 400;
@@ -37,7 +37,7 @@ ion-title {
     line-height: 26px;
 }
   
-.settings__content {
+.user__content {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 22px;
@@ -67,7 +67,37 @@ ion-title {
     grid-template-columns: 1fr;
     grid-gap: 18px;
 }
+
 a{
     color: #000000;
     text-decoration: none;
+}
+
+.image__container {
+    margin: 26px 0;
+}
+
+.image__container ion-title {
+    padding: 0 12px;
+    font-size: 20px;
+}
+.input{
+    padding-left: 12px !important;
+    display: flex;
+    height: 54px;
+    width: auto;
+    background: #FFFFFF;
+    border: 1.6px solid #333333;
+    border-radius: 6px;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+    font-weight: normal;
+    letter-spacing: 0.2px;
+}
+
+.input:hover {
+    border: 2.6px solid black;
+    transition: 0.2s
 }

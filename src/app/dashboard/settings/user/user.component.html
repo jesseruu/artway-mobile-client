@@ -1,0 +1,26 @@
+<ion-content>
+    <div class="user__container">
+        <h1 class="user__title">Perfil</h1>
+        <div class="user__content">
+            <ion-title size="small">AJUSTES</ion-title>
+            <a href="settings">Volver</a>
+              <ion-list>
+                <ion-item>
+                  <ion-label class="label__settings">Usuario | {{nombre.user}} </ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label class="label__settings">
+                    ¿Quieres un nuevo nombre de usuario?
+                    <ion-input class="input" placeholder="Nuevo Nombre de Usuario"><ion-button expand="block">Actualizar</ion-button></ion-input>
+                  </ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label class="label__settings">Correo electronico | {{correo.user}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-button expand="block" color="danger">ELIMINAR CUENTA</ion-button>
+                </ion-item>
+              </ion-list>
+        </div>
+    </div>
+</ion-content>
