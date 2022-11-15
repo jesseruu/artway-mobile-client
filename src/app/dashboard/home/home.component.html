@@ -2,12 +2,15 @@
   <ion-toolbar>
     <ion-title>Mi galeria</ion-title>
     <ion-buttons slot="end">
-      <ion-button class="button">NUEVO</ion-button>
+      <ion-button class="button" (click)="goToNew()">NUEVO</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="getImages($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <div *ngIf="showContainer">
     <div class="image__container" *ngFor="let image of images">
       <ion-card>

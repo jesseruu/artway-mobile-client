@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DiscoverComponent } from './discover/discover.component';
 import { DonationComponent } from './donation/donation.component';
 import { HomeComponent } from './home/home.component';
+import { ImagesComponent } from './images/images.component';
 import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'donation',
     component: DonationComponent
+  },
+  {
+    path: 'images',
+    component: ImagesComponent
   }
 ];
 

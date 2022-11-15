@@ -8,9 +8,10 @@ import { DashboardComponent } from './dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { DiscoverComponent } from './discover/discover.component';
 import { SettingsComponent } from './settings/settings.component';
+import { ImagesComponent } from './images/images.component';
 
 @NgModule({
-  declarations: [DashboardComponent, HomeComponent, DiscoverComponent, SettingsComponent],
+  declarations: [DashboardComponent, HomeComponent, DiscoverComponent, SettingsComponent, ImagesComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

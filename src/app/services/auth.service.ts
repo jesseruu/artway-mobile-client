@@ -11,11 +11,11 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  signin(email: string, password: string){
+  signin(email: string, password: string) {
     const userBody = {
-      email: email,
-      password: password
-    }
+      email,
+      password
+    };
 
     const url = `${environment.url}/auth/signin`;
     return this.http.post<any>(url, userBody);
@@ -23,16 +23,16 @@ export class AuthService {
 
   signup(name: string, email?: string, password?: string) {
     const userBody = {
-      name: name,
-      email: email,
-      password: password
-    }
+      name,
+      email,
+      password
+    };
 
     const url = `${environment.url}/auth/signup`;
     return this.http.post<any>(url, userBody);
   }
 
-  isAuthenticated(): boolean{
+  isAuthenticated(): boolean {
     const token = localStorage.getItem('token');
 
     if (token) {
