@@ -1,0 +1,75 @@
+.history__container {
+    font-family: Roboto;
+    padding: 0 16px;
+}
+
+.history__title {
+    font-family: SFRegular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 57px;
+    text-align: center;
+    letter-spacing: -0.333333px;
+    padding: 20px;
+    color: #000000;
+    margin-bottom: 26px;
+    margin-top: 56px;
+}
+
+.label__history {
+    font-family: SFRegular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+ion-item {
+    padding-right: 16px;
+}
+
+ion-title {
+    font-family: SFBold;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.settings__profile {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 22px;
+}
+
+.button {
+    font-family: SFBold;
+    box-sizing: border-box;
+    height: 54px;
+    width: auto;
+    --background: #000000;
+    background: #000000;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.back__button {
+    --background: #ffffff;
+    border: 2px solid #fff;
+    background: #fff;
+}
+
+.history__buttons {
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 18px;
+}

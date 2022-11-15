@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 
@@ -11,11 +11,11 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  signin(email: string, password: string){
+  signin(email: string, password: string) {
     const userBody = {
-      email: email,
-      password: password
-    }
+      email,
+      password
+    };
 
     const url = `${environment.url}/auth/signin`;
     return this.http.post<any>(url, userBody);
@@ -23,16 +23,25 @@ export class AuthService {
 
   signup(name: string, email?: string, password?: string) {
     const userBody = {
-      name: name,
-      email: email,
-      password: password
-    }
+      name,
+      email,
+      password
+    };
 
     const url = `${environment.url}/auth/signup`;
     return this.http.post<any>(url, userBody);
   }
 
-  isAuthenticated(): boolean{
+  getUser(uuid: string) {
+    const headers = new HttpHeaders()
+      .set('Authorization', localStorage.getItem('token'))
+      .set('content-type', 'application/json');
+
+    const url = `${environment.url}/users/${uuid}`;
+    return this.http.get<any>(url, { headers });
+  }
+
+  isAuthenticated(): boolean {
     const token = localStorage.getItem('token');
 
     if (token) {

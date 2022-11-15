@@ -12,7 +12,7 @@
     <h1 class="donation__title">Donaciones</h1>
     <div class="donation__content">
       <p>
-          Muchas gracias por donar a {{artistName}} continuación puedo continuar con su donación usando PayPal.
+        Muchas gracias por donar a {{artistName}} puede continuar con su donación usando PayU.
       </p>
       <div class="donation__buttons">
         <ion-button class='button' (click)="enableButton(); updateValues(5000)">
@@ -36,16 +36,16 @@
         <input name="currency" type="hidden" value="COP" />
         <input name="signature" type="hidden" value="{{signature}}" />
         <input name="test" type="hidden" value="1" />
-        <input name="buyerEmail" type="hidden" value="" />
-        <input name="responseUrl" type="hidden" value="" />
-        <input name="confirmationUrl" type="hidden" value="" />
+        <input name="buyerEmail" type="hidden" value="test@testing.com" />
+        <input name="responseUrl" type="hidden" value="http://localhost:4200/dashboard/resume" />
+        <input name="confirmationUrl" type="hidden" value="http://localhost:4200/dashboard/resume" />
         <div class="donation__buttons">
           <ion-button [attr.disabled]="isButtonDisabled ? 'disabled': null" type="submit" class='button'>
             Continua con PayU
           </ion-button>
         </div>
-    </form>
+      </form>
     </div>
   </div>
-  
+
 </ion-content>

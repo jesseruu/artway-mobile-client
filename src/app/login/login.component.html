@@ -2,14 +2,13 @@
   <div class="login__container">
     <h1 class="login__title">Bienvenido/a ArtWay</h1>
     <div class="login__content">
-      <ion-input class="input" placeholder="Correo electrónico" formControlName="email" type="email" (ionChange)="getEmail($event); checkInputs()"></ion-input>
-      <ion-input class="input" placeholder="Contraseña" type="password" formControlName="password" (ionChange)="getPassword($event); checkInputs()"></ion-input>
+      <ion-input class="input" placeholder="Correo electrónico" formControlName="email" type="email"
+        (ionChange)="getEmail($event); checkInputs()"></ion-input>
+      <ion-input class="input" placeholder="Contraseña" type="password" formControlName="password"
+        (ionChange)="getPassword($event); checkInputs()"></ion-input>
     </div>
     <div class="login__buttons">
-      <ion-button class="button" [attr.disabled]="isButtonDisabled ? 'disabled': null" (click)="signin()">Iniciar sesion</ion-button>
-      <p><span>o</span></p>
-      <ion-button class="button__external">Iniciar sesion con google
-        <ion-icon slot="start" src="assets/icon/Vector.svg"></ion-icon>
+      <ion-button class="button" [attr.disabled]="isButtonDisabled ? 'disabled': null" (click)="signin()">Iniciar sesion
       </ion-button>
     </div>
     <div class="error__container">

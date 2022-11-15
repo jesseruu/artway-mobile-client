@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
 import jwt_decode from 'jwt-decode';
+import { ImagesServices } from 'src/app/services/image.service';
+
+interface IImages {
+  name: string;
+  src: string;
+}
 
 @Component({
   selector: 'app-home',
@@ -8,28 +16,31 @@ import jwt_decode from 'jwt-decode';
 })
 export class HomeComponent implements OnInit {
 
-  images = [
-    {
-      name: 'Maniacarta',
-      src: 'assets/test1.jpg'
-    }, {
-      name: 'Vadan',
-      src: 'assets/test2.jpg'
-    }, {
-      name: 'Suraji',
-      src: 'assets/test3.jpg'
-    }
-  ];
-
+  images: IImages[];
   name: string;
-  showContainer = true;
-  constructor() { }
+  showContainer = false;
 
-  ngOnInit() {
+  constructor(
+    private router: Router,
+    private imagesServices: ImagesServices,
+    private loadingCtrl: LoadingController
+  ) { }
 
+  async ngOnInit() {
     const data: any = this.getUserdata(localStorage.getItem('token'));
     this.name = data.name;
+    await this.getImages();
     console.log(data);
+  }
+
+  async showLoading() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Espera un momento',
+      spinner: 'circular'
+    });
+
+    loading.present();
+    return loading;
   }
 
   getUserdata(token: string) {
@@ -40,8 +51,30 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  changeThing() {
-    this.showContainer = true;
+  async goToNew() {
+    await this.router.navigate(['dashboard/images']);
   }
 
+  async getImages(event?: any) {
+    this.images = [];
+    const loading = await this.showLoading();
+    this.imagesServices.getImages().subscribe(
+      data => {
+        const images = data as any[];
+        images.reverse().forEach((image) => {
+          this.images.push({ name: image.name, src: image.url });
+        });
+      },
+      err => {
+        console.log(err);
+        loading.dismiss();
+      },
+
+      () => loading.dismiss()
+    );
+
+    if (event) {
+      event.target.complete();
+    }
+  }
 }

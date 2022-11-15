@@ -3,31 +3,23 @@
     <h1 class="settings__title">Ajustes</h1>
     <div class="settings__content">
       <ion-title size="small">General</ion-title>
-        <ion-list>
-          <ion-item>
-            <ion-label class="label__settings">Perfil</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label class="label__settings">Apariencia</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label class="label__settings">Notificaciones</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label class="label__settings">Datos y almacenamiento</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label class="label__settings">Donaciones</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label class="label__settings">Ayuda</ion-label>
-          </ion-item>
-        </ion-list>
-        <div class="donation__buttons">
-          <ion-button class='button' (click)="logout();">
-            CERRAR SESION
-          </ion-button>
-        </div>
+      <ion-list>
+        <ion-item href="/dashboard/profile">
+          <ion-label class="label__settings">Perfil</ion-label>
+        </ion-item>
+        <ion-item href="/dashboard/history">
+          <ion-label class="label__settings">Donaciones</ion-label>
+        </ion-item>
+        <ion-item
+          href="/dashboard/resume?state=ACCEPTED&amount=20000&date=15/11/2022&id=8fd08639-d730-43e3-96e5-3c3064fc65a6">
+          <ion-label class="label__settings">Transaccion test</ion-label>
+        </ion-item>
+      </ion-list>
+      <div class="settings__buttons">
+        <ion-button class='button' (click)="logout();">
+          CERRAR SESION
+        </ion-button>
+      </div>
     </div>
   </div>
 </ion-content>

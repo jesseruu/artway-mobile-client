@@ -22,7 +22,8 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   async showLoading() {
     const loading = await this.loadingCtrl.create({
@@ -44,7 +45,7 @@ export class LoginComponent implements OnInit {
 
   checkInputs() {
     this.isError = false;
-    if(this.password && this.email) {
+    if (this.password && this.email) {
       this.isButtonDisabled = false;
     } else {
       this.isButtonDisabled = true;
@@ -56,9 +57,9 @@ export class LoginComponent implements OnInit {
     try {
       this.authService.signin(this.email, this.password).subscribe(
         data => {
-        localStorage.setItem('token', data.token);
-        this.router.navigate(['dashboard']);
-        load.dismiss();
+          localStorage.setItem('token', data.token);
+          this.router.navigate(['dashboard']);
+          load.dismiss();
         },
         err => {
           load.dismiss();

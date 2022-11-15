@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border">
+<ion-header>
   <ion-toolbar>
     <ion-title>Galeria | {{user?.name}}</ion-title>
     <ion-buttons slot="end">
@@ -11,14 +11,18 @@
   <ion-refresher slot="fixed" (ionRefresh)="getImages($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <div *ngIf="showContainer">
+  <div *ngIf="images.length">
     <div class="image__container" *ngFor="let image of images">
-      <ion-title size="small">{{image.name}}</ion-title>
-      <ion-img [src]="image.src"></ion-img>
+      <ion-card>
+        <ion-img [src]="image.src"></ion-img>
+        <ion-card-header>
+          <ion-card-title style="font-size:22px">{{image.name}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
     </div>
   </div>
 
-  <div class="empty__container" *ngIf="!showContainer">
+  <div class="empty__container" *ngIf="!images.length">
     <div class="empty__center">
       <ion-img src="assets/empty.svg"></ion-img>
       <p>Nada por aqui</p>

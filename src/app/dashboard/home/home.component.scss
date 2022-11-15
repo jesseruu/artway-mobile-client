@@ -9,7 +9,11 @@
 }
 
 .image__container {
-    margin: 26px 0;
+    margin: 16px 0;
+}
+
+ion-card-title {
+    font-family: SFRegular;
 }
 
 .image__container ion-title {
@@ -48,7 +52,7 @@ ion-title {
 }
 
 ion-toolbar {
-    padding: 0px 18px;
+    padding: 0px 12px;
 }
 
 ion-content {
