@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import jwt_decode from 'jwt-decode';
 import { ImagesServices } from 'src/app/services/image.service';
-import { ViewWillEnter } from '@ionic/angular';
 
 interface IImages {
   name: string;
@@ -28,7 +27,6 @@ export class HomeComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
-
     const data: any = this.getUserdata(localStorage.getItem('token'));
     this.name = data.name;
     await this.getImages();
@@ -53,8 +51,8 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  goToNew() {
-    this.router.navigate(['dashboard/images']);
+  async goToNew() {
+    await this.router.navigate(['dashboard/images']);
   }
 
   async getImages(event?: any) {
@@ -74,12 +72,6 @@ export class HomeComponent implements OnInit {
 
       () => loading.dismiss()
     );
-
-    if (this.images.length >= 0) {
-      this.showContainer = true;
-    } else {
-      this.showContainer = false;
-    }
 
     if (event) {
       event.target.complete();

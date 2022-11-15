@@ -95,7 +95,7 @@ export class ImagesComponent implements OnInit {
   async selectImage() {
     await this.clear();
     const image = await Camera.getPhoto({
-      quality: 100,
+      quality: 75,
       allowEditing: false,
       resultType: CameraResultType.Uri,
       source: CameraSource.Photos // Camera, Photos or Prompt!

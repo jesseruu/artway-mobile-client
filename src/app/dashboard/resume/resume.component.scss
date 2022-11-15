@@ -1,9 +1,9 @@
-.settings__container {
+.resume__container {
     font-family: Roboto;
     padding: 0 16px;
 }
 
-.settings__title {
+.resume__title {
     font-family: SFRegular;
     font-style: normal;
     font-weight: 400;
@@ -17,7 +17,7 @@
     margin-top: 56px;
 }
 
-.label__settings {
+.label__resume {
     font-family: SFRegular;
     font-style: normal;
     font-weight: 400;
@@ -37,7 +37,7 @@ ion-title {
     line-height: 26px;
 }
 
-.settings__content {
+.settings__profile {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 22px;
@@ -61,7 +61,13 @@ ion-title {
     color: #fff;
 }
 
-.settings__buttons {
+.back__button {
+    --background: #ffffff;
+    border: 2px solid #fff;
+    background: #fff;
+}
+
+.resume__buttons {
     margin: 10px 0;
     display: grid;
     grid-template-columns: 1fr;

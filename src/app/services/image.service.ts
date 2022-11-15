@@ -30,6 +30,17 @@ export class ImagesServices {
         return this.http.get<any>(url, { headers });
     }
 
+    getDonations() {
+        const token = localStorage.getItem('token');
+        const data: any = this.getUserdata(token);
+        const headers = new HttpHeaders()
+            .set('Authorization', token)
+            .set('content-type', 'application/json');
+
+        const url = `${environment.url}/users/${data.id}/donations`;
+        return this.http.get<any>(url, { headers });
+    }
+
     uploadImage(imageName: string, imageUri: string) {
         const token = localStorage.getItem('token');
         const data: any = this.getUserdata(token);

@@ -16,7 +16,6 @@ interface IImages {
 export class DiscoverComponent implements OnInit {
 
   images: IImages[];
-  showContainer = false;
   user: any;
 
   constructor(private router: Router, private imagesServices: ImagesServices, private loadingCtrl: LoadingController) { }
@@ -53,6 +52,7 @@ export class DiscoverComponent implements OnInit {
             this.images.push({ name: image.name, src: image.url });
           });
         }
+        console.log(this.images);
       },
       err => {
         console.log(err);
@@ -60,13 +60,6 @@ export class DiscoverComponent implements OnInit {
       },
       () => loading.dismiss()
     );
-
-    if (this.images.length >= 0) {
-      this.showContainer = true;
-    } else {
-      this.showContainer = false;
-    }
-
     if (event) {
       event.target.complete();
     }

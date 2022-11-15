@@ -1,0 +1,37 @@
+<ion-content>
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button class="back__button" (click)="goBack()">
+          <ion-icon slot="icon-only" name="chevron-back-outline" color="dark"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <div class="history__container">
+    <h1 class="history__title">Donaciones</h1>
+    <div *ngIf="donations.length">
+      <div class="history__content" *ngFor="let donation of donations">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>${{donation.amount}}</ion-card-title>
+            <ion-card-subtitle>{{donation.date}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </div>
+    </div>
+
+    <div *ngIf="!donations.length">
+      <div class="history__content">
+        <ion-item>
+          <ion-label class="label__history">No tienes donaciones</ion-label>
+        </ion-item>
+      </div>
+    </div>
+    <div class="history__buttons">
+      <ion-button class='button' (click)="goBack();">
+        VOLVER
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
